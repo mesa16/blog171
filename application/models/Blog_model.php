@@ -25,10 +25,10 @@ class Blog_model extends CI_Model {
  // membuat blog_ID otomatis
  // menggunakan UNIX Timestamp --> date('U')
  $nick = substr( $this->input->post('judul'), 0 , 3 ); // 3 huruf pertamadari judul blog
- $user_id = "B-" . $pick . date('U');
+ $blog_ID = "B-" . $nick . date('U');
  // menyiapkan data
  $data = [
- 'blog_ID' => $user_id,
+ 'blog_ID' => $blog_ID,
  'judul' => $this->input->post('judul'),
  'isi' => $this->input->post('isi'),
  'user_ID' => $this->session->uid,
