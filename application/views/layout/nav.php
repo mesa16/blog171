@@ -26,6 +26,13 @@
           <li class="nav-item"><a class="nav-link" href="/user/masuk">signin</a>
           </li>
 
+        </li>
+
+
+          <li class="nav-item"><a class="nav-link" href="user/signout">logout</a>
+          </li>
+
+
       </ul>
     </div>
   </div>

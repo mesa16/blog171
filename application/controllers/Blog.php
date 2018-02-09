@@ -10,10 +10,34 @@ class Blog extends CI_Controller {
  $this->load->template( 'bacablog', $data );
  }
  public function post() {
- $this->load->template('tulisblog');
+ if (isset($this->session->uid)){
+
+   $this->load->template('tulisblog');
+ } else {
+  redirect('user/masuk');
  }
+}
  public function submit() {
- $this->blog_model->submit();
+ $blog_id = $this->blog_model->submit();
+ $ext= pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
+ $file = "./assets/img/blog/".$blog_id.".".$ext;
+
+ move_uploaded_file($_FILES['gambar']['tmp_name'], $file);
  redirect("home");
+ }
+
+ public function delete($blog_ID){
+   $this->blog_model->delete($blog_ID);
+   redirect('home');
+ }
+
+ public function edit($blog_ID){
+   $data= $this->blog_model->blog($blog_ID);
+   $this->load->template('edit', $data);
+ }
+
+ public function subedit($blog_ID){
+   $data = $this->blog_model->edit($blog_ID);
+   redirect('home');
  }
 }

@@ -16,18 +16,16 @@
 </header>
 
 <!-- Main Content -->
-<?php
-	foreach( $blogs as $blog ){ ?>
-    <div class="col-lg-8 col-md-10 mx-auto">
-      <div class="post-preview">
-        <a href="post.html">
-          <h2 class="post-title">
-    <?php echo "<a href='/blog/" . $blog['blog_ID'] ."'>" . $blog['judul']."<a><br>"; ?>
-    </div>
+<?php foreach( $blogs as $blog ){ ?>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./assets/img/blog" alt="Card image cap">
+  <?php
+  echo "<img src=\"./assets/img/blog".$blog['blog_ID'].".".$blog['gambar']."\"> "; ?>
+  <div class="card-body">
+    <h5 class="card-title"><?php echo "<a href='/blog/" . $blog['blog_ID'] ."'>" . $blog['judul']."<a><br>"; ?></h5>
   </div>
+</div>
 <?php } ?>
-
-
 <hr>
 
 <!-- Footer -->

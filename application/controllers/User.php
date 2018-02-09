@@ -32,7 +32,6 @@ class User extends CI_Controller
     if ($user = $this->user_model->user( $email ) ) {
       if ( $user['password'] == md5( $pass ) ) {
         $this->session->uid = $user['user_ID'];
-        $this->session->uid = $user['nama'];
 
         redirect('home');
         # code...
@@ -48,7 +47,7 @@ class User extends CI_Controller
     public function signout(){
       $this->session->sess_destroy();
 
-      redirect('welcome');
+      redirect('/');
     }
 
 }
