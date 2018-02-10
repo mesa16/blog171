@@ -1,14 +1,14 @@
 
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+<header class="masthead" style="background-image: url('/assets/img/berita.jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h1>Clean Blog</h1>
-          <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          <h1>Berita Terpercaya</h1>
+          <span class="subheading">Selamat datang di web Berita Kami</span>
         </div>
       </div>
     </div>
@@ -18,16 +18,15 @@
 <!-- Main Content -->
 <?php foreach( $blogs as $blog ){ ?>
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="./assets/img/blog" alt="Card image cap">
+  <img class="card-img-top">
   <?php
-  echo "<img src=\"./assets/img/blog".$blog['blog_ID'].".".$blog['gambar']."\"> "; ?>
+  echo "<img src=\"./assets/img/blog/".$blog['blog_ID'].".".$blog['gambar']."\"> "; ?>"
   <div class="card-body">
     <h5 class="card-title"><?php echo "<a href='/blog/" . $blog['blog_ID'] ."'>" . $blog['judul']."<a><br>"; ?></h5>
+    <p class="card-text"></p>
   </div>
 </div>
 <?php } ?>
-<hr>
-
 <!-- Footer -->
 <footer>
   <div class="container">
