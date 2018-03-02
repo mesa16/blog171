@@ -1,65 +1,37 @@
-
-
-<!-- Page Header -->
-<header class="masthead" style="background-image: url('/assets/img/berita.jpg')">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h1>Berita Terpercaya</h1>
-          <span class="subheading">Selamat datang di web Berita Kami</span>
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+              <strong class="text-uppercase">Elektronik dan Komputer</strong>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
 
-<!-- Main Content -->
-<?php foreach( $blogs as $blog ){ ?>
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top">
-  <?php
-  echo "<img src=\"./assets/img/blog/".$blog['blog_ID'].".".$blog['gambar']."\"> "; ?>"
-  <div class="card-body">
-    <h5 class="card-title"><?php echo "<a href='/blog/" . $blog['blog_ID'] ."'>" . $blog['judul']."<a><br>"; ?></h5>
-    <p class="card-text"></p>
-  </div>
-</div>
-<?php } ?>
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          <li class="list-inline-item">
-            <a href="#">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-        </ul>
-        <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+    <div class="home">
+    <section id="services" src="assets/img/blog.jp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading"> Daftar Blog</h2>
+            <hr class="my-4">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
+
+      <div class="container">
+        <div class="row">
+          <?php foreach( $blogs as $blog ){ ?>
+          <div class="col-lg-6 col-md-6 text-center">
+            <h3 class="mb-3"></h3>
+            <p class="text-muted mb-0"><?php echo "<a href='/blog/" . $blog['blog_ID'] ."'>" . $blog['judul']."<a><br>"; ?></p>
+            <div class="service-box mt-5 mx-auto" id="gambar">
+              <?php
+              echo "<img src=\"./assets/img/blog/".$blog['blog_ID'].".".$blog['gambar']."\"> "; ?>
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+      </div>
+    </section>
+   </div>

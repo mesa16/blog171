@@ -9,21 +9,22 @@ class Blog extends CI_Controller {
  $data['blog'] = $this->blog_model->blog( $blog_ID );
  $this->load->template( 'bacablog', $data );
  }
+ 
  public function post() {
  if (isset($this->session->uid)){
-
    $this->load->template('tulisblog');
  } else {
   redirect('user/masuk');
- }
 }
+}
+
  public function submit() {
  $blog_id = $this->blog_model->submit();
  $ext= pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
  $file = "./assets/img/blog/".$blog_id.".".$ext;
 
  move_uploaded_file($_FILES['gambar']['tmp_name'], $file);
- redirect("home");
+ redirect("/");
  }
 
  public function delete($blog_ID){
@@ -40,4 +41,5 @@ class Blog extends CI_Controller {
    $data = $this->blog_model->edit($blog_ID);
    redirect('home');
  }
+
 }

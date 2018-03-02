@@ -11,21 +11,22 @@ class User extends CI_Controller
   {
     parent::__construct();
     $this->load->model('user_model');
-
   }
 
   public function register(){
-    $this->load->template('home');
+    $this->load->template('form_register');
   }
   public function masuk(){
     $this->load->template('masuk');
   }
+
   public function regsubmit(){
     $this->user_model->register();
     redirect("user/masuk");
   }
 
-  public function signin(){
+
+public function signin(){
     $email = $this->input->post('email');
     $pass = $this->input->post('password');
 
@@ -37,6 +38,7 @@ class User extends CI_Controller
         # code...
       } else {
         echo "Login Failed";
+        redirect('user/masuk');
       }
     }else {
         echo "tidak terdaftar";
@@ -47,8 +49,15 @@ class User extends CI_Controller
     public function signout(){
       $this->session->sess_destroy();
 
-      redirect('/');
+      redirect('welcome');
     }
+
+    public function about( $user_ID ) {
+    $data['about1'] = $this->user_model->about1( $user_ID );
+    $data['about2'] = $this->user_model->about2( $user_ID );
+    $this->load->template( 'about', $data );
+    }
+
 
 }
 

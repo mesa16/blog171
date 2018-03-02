@@ -1,41 +1,43 @@
-
-
-<!-- Page Header -->
-<header class="masthead" style="/assetsbackground-image: url('/assets/img/berita.jpg')">
-  <div class="overlay"></div>
-  <div class="container">
+<header class="masthead text-center text-white d-flex">
+  <div class="container my-auto">
     <div class="row">
-      <div class="col-sm-4 col-sm-4 mx-auto">
-        <div class="site-heading">
-          <h1>Berita Terpercaya</h1>
-          <span class="subheading">Selamat datang dan selamat membaca</span>
-          <form action="/user/reg_submit" method="post">
-            <div class="form-group">
-           Email: <input type="email" name="email" class="form-control"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"><br>
-         </div>
-         <div class="form-group">
-           Nama: <input type="text" name="nama" class="form-control"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name"><br>
-         </div>
-         <div class="form-group">
-           Password: <input type="password" name="pass1" class="form-control"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter password"><br>
-         </div>
-         <div class="form-group">
-           Verifikasi Password: <input type="password" name="pass2" class="form-control"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter verifikasi password"><br>
-         </div>
-           <input type="submit" value="Register">
-          </form>
-        </div>
+      <div class="col-lg-10 mx-auto">
+        <h1 class="text-uppercase">
+          <strong>Elektronik dan Komputer</strong>
+        </h1>
       </div>
     </div>
   </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-        <p class="copyright text-muted">Copyright &copy; Mesa 2018</p>
+<div class="home">
+<section id="services" style="background:#ECEFF1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading"> Daftar Blog</h2>
+        <hr class="my-4">
       </div>
     </div>
   </div>
-</footer>
+
+
+
+  <div class="container">
+    <div class="row">
+      <?php foreach( $blogs as $blog ){ ?>
+      <div class="col-lg-6 col-md-6 text-center">
+        <h3 class="mb-3"></h3>
+        <p class="text-muted mb-0"><?php echo "<a href='/blog/" . $blog['blog_ID'] ."'>" . $blog['judul']."<a><br>"; ?></p>
+        <div class="service-box mt-5 mx-auto" id="gambar">
+
+          <?php
+          echo "<img src=\"./assets/img/blog/".$blog['blog_ID'].".".$blog['gambar']."\"> "; ?>
+
+        </div>
+      </div>
+      <?php } ?>
+    </div>
+  </div>
+</section>
+  </div>

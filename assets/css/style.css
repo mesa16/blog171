@@ -1,0 +1,73 @@
+.img{
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  position: static;
+  margin-left:250px;
+}
+img{
+  width: 80%;
+  height: 50%;
+  overflow: hidden;
+  position: static;
+}
+h1{
+  text-align: center;
+}
+body{
+  background-image: url("/assets/img/blog.jpg");
+}
+.section-heading {
+    margin-top: 0;
+    color:#fff;
+}
+.text-uppercase{
+  font-size: 50px;
+}
+.isi{
+  color: black;
+  width: 64%;
+  background-color: #fff;
+}
+.judul{
+  width: 64%;
+  margin-left: 250px;
+  color: black;
+  background-color: #fff
+}
+.penulis{
+  color: #fff;
+  margin-left: 240px;
+  text-align: center;
+}
+
+p{
+  width: 800px;
+  margin-left: 250px;
+  text-align: justify;
+  display: block;
+}
+.profile{
+  margin-left: 100px;
+  text-align: center;
+}
+
+#mainNav.navbar-shrink {
+    border-bottom: 1px solid rgba(33,37,41,.1);
+    background-color: ##263238;
+}
+.service-box {
+    width: 500px;
+    height: 350px;
+    margin-left: auto;
+}
+.text-center{
+  text-align: center;
+}
+.text-muted {
+  margin-left: 100px;
+    color: #6c757d!important;
+}
+.tentang{
+  text-align: center;
+}
